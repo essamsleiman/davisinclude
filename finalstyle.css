@@ -1,25 +1,15 @@
 /* About page CSS */
-h1 {
-    Margin:10px;
-    font-size: 100%;
-    color: yellow;
-}
+#aboutParagraphs{
+    position: absolute;
+	width: 704px;
+	height: 314px;
+	margin-top: 73px;
 
-
-.about{
-    color: #FFF598;
-    font-family: arial;
-    font-size: 45px;
-}
-
-.paragraphs{
-    font-family: arial;
-    font-size: 20px;
-    font-family: Muli;
+	font-family: Muli;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 15px;
-	line-height: 19px;
+	font-size: 20px;
+	line-height: 25px;
 
 	color: #FFFFFF;
 }
@@ -30,26 +20,23 @@ h1 {
     padding:10px;
     Margin:10px;
 }
-  .flex-container {
-    display: flex;
-    flex-direction: column;
-    background-color: DodgerBlue;
-  }
-  
-  .flex-container > div {
-    background-color: #f1f1f1;
-    width: 100px;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 40px;
-  }
-  .padding{
-      padding:100px;
-  }
 
-body {
-	background: black;
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	background-color: DodgerBlue;
+}
+
+.flex-container > div {
+	background-color: #f1f1f1;
+	width: 100px;
+	margin: 10px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 40px;
+	}
+	.padding{
+	  padding:100px;
 }
 
 /* Values page CSS */
@@ -67,20 +54,6 @@ body {
 	line-height: 19px;
 
 	color: #FFFFFF;
-}
-
-h2 { 
-	position: absolute;
-	width: 293px;
-	height: 72px;
-
-	font-family: Poppins;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 48px;
-	line-height: 72px;
-
-	color: #FFF598;
 }
 
 h3 {
@@ -104,7 +77,20 @@ img {
 	height: 150px;
 }
 
-.values {
+#pageSeparationPadding {
+	padding-top: 485px;
+}
+
+.initialTopPadding {
+	padding-top: 163px;
+}
+
+/* Shared CSS */
+body {
+	background: black;
+}
+
+h2 { 
 	position: absolute;
 	width: 293px;
 	height: 72px;
@@ -114,26 +100,20 @@ img {
 	font-weight: 500;
 	font-size: 48px;
 	line-height: 72px;
-	/* identical to box height */
 
 	color: #FFF598;
 }
 
-.initialTopPadding {
-	padding-top: 163px;
-}
-
-.pageSeparationPadding {
-	padding-top: 485px;
-}
-
-.leftBorder {
+.titles {
 	position: absolute;
-	width: 4561px;
-	height: 0px;
-	left: 153px;
-	top: 749px;
+	width: 293px;
+	height: 72px;
 
-	border: 3px solid #FFFFFF;
-	transform: rotate(90.01deg);
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 72px;
+
+	color: #FFF598;
 }
