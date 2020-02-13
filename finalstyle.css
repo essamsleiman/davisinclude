@@ -1,9 +1,54 @@
+.menu-container {
+	display: flex;
+	justify-content: center;
+	background-color: black;
+}
+
+/* Currently my only issue is that the <p></p> text is not the correct width - percentages seem right so idk what's up here */
+.value-container {
+	background-color: grey;
+	flex-wrap: wrap; /* do they want wrap or no wrap? need to ask */
+}
+
+/* This affects only the h2s within the value container*/
+.value-container > h2 {
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 72px;
+
+	padding-left: 22.3%;
+	padding-right: 22.9%;
+
+	color: #FFF598;
+
+}
+
+.value-container > p {
+	font-family: Muli;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 25px;
+	padding-top: 72px;
+
+	padding-left: 22.3%;
+	padding-right: 22.9%;
+
+	color: #FFFFFF;
+
+}
+
+
+
+
 /* About page CSS */
 #aboutParagraphs{
     position: absolute;
 	width: 704px;
 	height: 314px;
-	margin-top: 73px;
+	margin-top: 148px;
 
 	font-family: Muli;
 	font-style: normal;
@@ -13,6 +58,7 @@
 
 	color: #FFFFFF;
 }
+
 .box{
     color:orange;
     border:0.5px solid black;
@@ -88,9 +134,12 @@ img {
 /* Shared CSS */
 body {
 	background: black;
+	width: 100%;
+	height: 100%;
 }
 
-h2 { 
+
+/*h2 { 
 	position: absolute;
 	width: 293px;
 	height: 72px;
@@ -102,7 +151,7 @@ h2 {
 	line-height: 72px;
 
 	color: #FFF598;
-}
+}*/
 
 .titles {
 	position: absolute;
