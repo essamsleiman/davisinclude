@@ -1,31 +1,30 @@
-.menu-container {
-	display: flex;
-	justify-content: center;
+body {
 	background-color: black;
 }
 
-/* Currently my only issue is that the <p></p> text is not the correct width - percentages seem right so idk what's up here */
-.value-container {
-	background-color: grey;
-	flex-wrap: wrap; /* do they want wrap or no wrap? need to ask */
+.totalContent-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 22.3%;
+	margin-right: 22.9%;
 }
 
-/* This affects only the h2s within the value container*/
-.value-container > h2 {
+
+.about-container {
+	flex-wrap: wrap; 
+}
+
+.about-container > h2 {
 	font-family: Poppins;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 48px;
 	line-height: 72px;
 
-	padding-left: 22.3%;
-	padding-right: 22.9%;
-
 	color: #FFF598;
-
 }
 
-.value-container > p {
+.about-container > p {
 	font-family: Muli;
 	font-style: normal;
 	font-weight: normal;
@@ -33,81 +32,43 @@
 	line-height: 25px;
 	padding-top: 72px;
 
-	padding-left: 22.3%;
-	padding-right: 22.9%;
-
 	color: #FFFFFF;
-
 }
 
+.about-container > p span {
+	text-decoration: underline;
+}
 
+.value-container {
+	flex-wrap: wrap;
+	margin-top: 130px;
+}
 
-
-/* About page CSS */
-#aboutParagraphs{
-    position: absolute;
-	width: 704px;
-	height: 314px;
-	margin-top: 148px;
-
-	font-family: Muli;
+.value-container > h2 {
+	font-family: Poppins;
 	font-style: normal;
-	font-weight: normal;
-	font-size: 20px;
-	line-height: 25px;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 72px;
 
-	color: #FFFFFF;
+	color: #FFF598;
 }
 
-.box{
-    color:orange;
-    border:0.5px solid black;
-    width: 50px;
-    padding:10px;
-    Margin:10px;
-}
-
-.flex-container {
+.valuesRow-container {
 	display: flex;
-	flex-direction: column;
-	background-color: DodgerBlue;
+	flex-direction: row;
+	margin-top: 75px;
+	justify-content: space-around;
 }
 
-.flex-container > div {
-	background-color: #f1f1f1;
-	width: 100px;
-	margin: 10px;
-	text-align: center;
-	line-height: 75px;
-	font-size: 40px;
-	}
-	.padding{
-	  padding:100px;
+.valuesRow-container > img {
+	width: 150px;
+	height: 150px;
+	max-width: 100%;
 }
 
-/* Values page CSS */
-.valuesParagraphs {
-	position: absolute;
-	width: 434px;
-	height: 121px;
-	left: 320px;
-	top: 63px;
-
-	font-family: Muli;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 15px;
-	line-height: 19px;
-
-	color: #FFFFFF;
-}
-
-h3 {
-	position: absolute;
-	width: 155px;
-	height: 63px;
-	left: 320px;
-
+.valuesRow-container > h3 {
+	margin-left: 9.5%;
 	font-family: Poppins;
 	font-style: normal;
 	font-weight: 500;
@@ -117,52 +78,66 @@ h3 {
 	color: #FFF598;
 }
 
-img {
-	position: absolute;
-	width: 151px;
-	height: 150px;
-}
-
-#pageSeparationPadding {
-	padding-top: 485px;
-}
-
-.initialTopPadding {
-	padding-top: 163px;
-}
-
-/* Shared CSS */
-body {
-	background: black;
-	width: 100%;
-	height: 100%;
-}
-
-
-/*h2 { 
-	position: absolute;
-	width: 293px;
-	height: 72px;
-
-	font-family: Poppins;
+.valuesRow-container > p {
+	margin-left: -10.5%;
+	margin-top: 63px;
+	font-family: Muli;
 	font-style: normal;
-	font-weight: 500;
-	font-size: 48px;
-	line-height: 72px;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 19px;
 
-	color: #FFF598;
-}*/
+	color: #FFFFFF;
+}
 
-.titles {
-	position: absolute;
-	width: 293px;
-	height: 72px;
+.valuesRow-container > p span {
+	text-decoration: underline;
+}
 
-	font-family: Poppins;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 48px;
-	line-height: 72px;
+.slide-container {
+	width: 717px;
+	height: 355px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	text-align: center;
+}
 
-	color: #FFF598;
+.image-container {
+	width: 2151px;
+	height: 355px;
+	position: relative;
+	transition: left 2s;
+	-webkit-transition: left 2s;
+	-moz-transition: left 2s;
+	-o-transition: left 2s;
+}
+
+.slider-image {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+.button-container {
+	top: -50px;
+	position: relative;
+}
+
+.slider-button {
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	border-radius: 5px;
+	background-color: white;
+}
+
+#slider-image-1:target ~ .image-container {
+	left:0px;
+}
+#slider-image-2:target ~ .image-container {
+	left:-717px;
+}
+#slider-image-3:target ~ .image-container {
+	left:-1434px;
 }
