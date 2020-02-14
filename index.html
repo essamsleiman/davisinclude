@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>About Us</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Muli|Poppins&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="finalstyle.css">
 	</head>
 	<body>
@@ -23,21 +23,14 @@
 	            </p>
 			</div>
 
-			<div class="slide-container">
-				<span id="slider-image-1"></span>
-				<span id="slider-image-2"></span>
-				<span id="slider-image-3"></span>
-					<div class="image-container">
-						<img src="images\slideshow1.png" class="slider-image">
-						<img src="images\slideshow1.png" class="slider-image">
-						<img src="images\slideshow1.png" class="slider-image">
-					</div>
-				<div class="button-container">
-					<a href="#slider-image-1" class="slider-button"></a>
-					<a href="#slider-image-2" class="slider-button"></a>
-					<a href="#slider-image-3" class="slider-button"></a>
-				</div>
+			<div id="content">
+				<img src="images\img1.png" alt="slideshow image" id="myimage">
 			</div>
+
+			<p id="links">
+				<a href="#" id="previous">previous</a>
+				<a href="#" id="next">next</a>
+			</p>
 
 			<div class="value-container">
 				<h2>Values</h2>
@@ -76,5 +69,48 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+				var currentImage = 0;
+				var myPhotos = [
+					"img1.png",
+					"img2.png",
+					"img3.png"
+					];
+					var container = document.getElementById('content');
+					var nextBtn = document.getElementById('next');
+					var prevBtn = document.getElementById('previous');
+
+					nextBtn.addEventListener('click', function(event) {
+						event.preventDefault();
+						currentImage++;
+
+						if (currentImage == (myPhotos.length)){
+							currentImage = 0;
+						}
+						swapImage();
+					});
+
+					prevBtn.addEventListener('click', function(event) {
+						event.preventDefault();
+						currentImage--;
+
+						if (currentImage < 0) {
+							currentImage = myPhotos.length-1;
+						}
+						swapImage();
+					});
+
+					function swapImage() {
+						var newSlide = document.createElement('img');
+						newSlide.src = 'images/img2.png';
+						newSlide.setAttribute("class", "fadeinimg");
+						container.appendChild(newSlide);
+
+						if (container.children.length > 1) {
+							container.removeChild(container.children[0]);
+						}
+					};
+			</script>
 	</body>
 </html>
