@@ -7,7 +7,9 @@
 		<link rel="stylesheet" href="finalstyle.css">
 	</head>
 	<body>
+		<!-- Page container -->
 		<div class="totalContent-container">
+			<!-- About container -->
 			<div class="about-container">
 				<h2>About</h2>
 				<p>The Davis Night Market recovers food that would 
@@ -23,15 +25,35 @@
 	            </p>
 			</div>
 
-			<div id="content">
-				<img src="images\img1.png" alt="slideshow image" id="myimage">
+			<!-- Slideshow container -->
+			<div class="slideshow-container">
+
+				<!-- Full-width images -->
+				<div class="mySlides fade">
+				    <img src="images\img1large.png" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+				    <img src="images\img2.png" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+				    <img src="images\img3large.png" style="width:100%">
+				</div>
+
+				<!-- Next and previous buttons -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				
+				<!-- The dots/circles -->
+				<div style="text-align:center">
+					<span class="dot" onclick="currentSlide(1)"></span>
+					<span class="dot" onclick="currentSlide(2)"></span>
+					<span class="dot" onclick="currentSlide(3)"></span>
+				</div>
 			</div>
 
-			<p id="links">
-				<a href="#" id="previous">previous</a>
-				<a href="#" id="next">next</a>
-			</p>
-
+			<!-- Value container -->
 			<div class="value-container">
 				<h2>Values</h2>
 				<div class="valuesRow-container">
@@ -41,7 +63,7 @@
 					<div class="titleTextCol-container">
 						<h3>Give</h3>
 						<div class="smallTextCol-container">
-							<p>age to <span> nightmg</span> and a group of volunteers will come pick up the unsold food once a week. age to <span> nightmg</span> and a group of volunteers will come pick up the unsold food once a week.</p>
+							<p>age to <span>nightmg</span> and a group of volunteers will come pick up the unsold food once a week. age to <span>nightmg</span> and a group of volunteers will come pick up the unsold food once a week.</p>
 						</div>
 					</div>
 				</div>
@@ -52,7 +74,7 @@
 					<div class="titleTextCol-container">
 						<h3>Take</h3>
 						<div class="smallTextCol-container">
-							<p>age to <span> nightmg</span> and a group of volunteers will come pick up the unsold food once a week. age to <span> nightmg</span> and a group of volunteers will come pick up the unsold food once a week.</p>
+							<p>age to <span>nightmg</span> and a group of volunteers will come pick up the unsold food once a week. age to <span>nightmg</span> and a group of volunteers will come pick up the unsold food once a week.</p>
 						</div>
 					</div>
 				</div>
@@ -63,54 +85,43 @@
 					<div class="titleTextCol-container">
 						<h3>Share</h3>
 						<div class="smallTextCol-container">
-							<p>age to <span> nightmg</span> and a group of volunteers will come pick up the unsold food once a week. age to <span> nightmg</span> and a group of volunteers will come pick up the unsold food once a week.</p>
+							<p>age to <span>nightmg</span> and a group of volunteers will come pick up the unsold food once a week. age to <span>nightmg</span> and a group of volunteers will come pick up the unsold food once a week.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
+		<!-- Slideshow Javascript -->
 		<script>
-				var currentImage = 0;
-				var myPhotos = [
-					"img1.png",
-					"img2.png",
-					"img3.png"
-					];
-					var container = document.getElementById('content');
-					var nextBtn = document.getElementById('next');
-					var prevBtn = document.getElementById('previous');
+			var slideIndex = 1;
+			showSlides(slideIndex);
 
-					nextBtn.addEventListener('click', function(event) {
-						event.preventDefault();
-						currentImage++;
+			// Next/previous controls
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+			}
 
-						if (currentImage == (myPhotos.length)){
-							currentImage = 0;
-						}
-						swapImage();
-					});
+			// Thumbnail image controls
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
 
-					prevBtn.addEventListener('click', function(event) {
-						event.preventDefault();
-						currentImage--;
-
-						if (currentImage < 0) {
-							currentImage = myPhotos.length-1;
-						}
-						swapImage();
-					});
-
-					function swapImage() {
-						var newSlide = document.createElement('img');
-						newSlide.src = 'images/img2.png';
-						newSlide.setAttribute("class", "fadeinimg");
-						container.appendChild(newSlide);
-
-						if (container.children.length > 1) {
-							container.removeChild(container.children[0]);
-						}
-					};
-			</script>
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+			 	for (i = 0; i < slides.length; i++) {
+			    	slides[i].style.display = "none";
+			  	}
+			  	for (i = 0; i < dots.length; i++) {
+			    	dots[i].className = dots[i].className.replace(" active", "");
+			  	}
+			  	slides[slideIndex-1].style.display = "block";
+			  	dots[slideIndex-1].className += " active";
+			}
+		</script>
 	</body>
 </html>
