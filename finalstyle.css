@@ -31,7 +31,7 @@ body {
 	font-weight: normal;
 	font-size: 20px;
 	line-height: 25px;
-	padding-top: 72px;
+	padding-top: 48px;
 
 	color: #FFFFFF;
 }
@@ -97,8 +97,8 @@ body {
 .dot {
 	position: relative;
 	cursor: pointer;
-	height: 15px;
-	width: 15px;
+	height: 5px;
+	width: 5px;
 	margin: 0 2px;
 	background-color: #bbb;
 	border-radius: 50%;
@@ -126,69 +126,4 @@ body {
 @keyframes fade {
 	from {opacity: .4}
 	to {opacity: 1}
-}
-
-/* VALUE SECTION CSS */
-.value-container {
-	flex-wrap: wrap;
-	margin-top: 130px;
-}
-
-.value-container > h2 {
-	font-family: Poppins;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 48px;
-	line-height: 72px;
-
-	color: #FFF598;
-}
-
-.valuesRow-container {
-	display: flex;
-	flex-direction: row;
-	margin-top: 75px;
-	justify-content: space-around;
-}
-
-.imgcol-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.titleTextCol-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.titleTextCol-container > h3 {
-	margin-left: 10%;
-	font-family: Poppins;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 40px;
-	line-height: 60px;
-
-	color: #FFF598;
-}
-
-.smallTextCol-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.smallTextCol-container > p {
-	margin-top: -5%;
-	margin-left: 10%;
-	font-family: Muli;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 15px;
-	line-height: 19px;
-
-	color: #FFFFFF;
-}
-
-.smallTextCol-container > p span {
-	text-decoration: underline;
 }
